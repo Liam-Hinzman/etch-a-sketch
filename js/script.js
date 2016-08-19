@@ -60,7 +60,7 @@ $(document).ready(function(){
 
   applyCss();
 
-  $('.container > div').mouseenter(function(){
+  $(document).on('mouseenter','.container > div', function(){
     $(this).css('background-color', 'black');
   })
 
