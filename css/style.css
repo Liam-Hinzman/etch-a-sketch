@@ -1,0 +1,20 @@
+.container > div{
+  display: inline-block;
+  height: " + length + "px;
+  width: " + length + "px;
+  border: " + borderThickness + "px solid black;
+}
+
+.grid{
+  display: block;
+  margin: 100px auto;
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  display: block;
+  margin: 0px auto;
+  height: " + length + "px;
+  width: " + ((length + (borderThickness * 2)) * gridWidth) + "px;
+}
