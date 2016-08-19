@@ -7,7 +7,7 @@
 
 #grid{
   display: block;
-  margin: 50px auto;
+  margin: 25px auto;
   height: " + (+gridSize + (+borderThickness * 2)) + "px;
   width: " + (+gridSize + (+borderThickness * 2)) + "px;
 }
