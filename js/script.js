@@ -4,9 +4,13 @@ $(document).ready(function(){
   var gridHeight = 16;
   var gridWidth = 16;
   var borderThickness = 1;
-  console.log(gridSize);
+  var color = 'black';
+  randomColorTF = false;
+
   var clearButton = document.getElementById('clearButton');
-  var changeGridSize = document.getElementById('changeGridSize');
+  var changeGridSizeButton = document.getElementById('changeGridSizeButton');
+  var randomColorsButton = document.getElementById('randomColorsButton');
+  var blackButton = document.getElementById('blackButton');
 
 
 
@@ -45,23 +49,44 @@ $(document).ready(function(){
     console.log(+gridSize / (+gridHeight + (+borderThickness * 2)))
   }
 
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+  }
+
 
   $(clearButton).click(function(){
     clear();
   })
 
-  $(changeGridSize).click(function(){
+  $(changeGridSizeButton).click(function(){
     sizeChange();
   })
 
+  $(randomColorsButton).click(function(){
+    randomColorTF = true;
+  })
 
+  $(blackButton).click(function(){
+    randomColorTF = false
+  })
 
   createGrid();
 
   applyCss();
 
   $(document).on('mouseenter','.container > div', function(){
-    $(this).css('background-color', 'black');
+    console.log(randomColorTF);
+    if(randomColorTF === true){
+      getRandomColor();
+      $(this).css('background-color', color);
+    }else{
+      $(this).css('background-color', 'black');
+    }
+
   })
 
 })
