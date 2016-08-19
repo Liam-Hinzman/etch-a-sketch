@@ -4,7 +4,7 @@ $(document).ready(function(){
   var gridHeight = 16;
   var gridWidth = 16;
   var borderThickness = 1;
-
+  console.log(gridSize);
   var clearButton = document.getElementById('clearButton');
   var changeGridSize = document.getElementById('changeGridSize');
 
@@ -39,9 +39,10 @@ $(document).ready(function(){
   }
 
   function applyCss(){
-    $('style').remove();
-    var style = $("<style> .container > div{ display: inline-block; height: " + (gridSize / (gridHeight + (borderThickness * 2))) + "px; width: " + (gridSize / (gridWidth + (borderThickness * 2))) + "px; border: " + borderThickness + "px solid black; } #grid{ display: block; margin: 50px auto; height: " + (gridSize + (borderThickness * 2)) + "px; width: " + (gridSize + (borderThickness * 2)) + "px; } .container{ display: block; margin: 0px auto; height: " + (gridSize / (gridHeight + (borderThickness * 2))) + "px; width: " + (gridSize + (borderThickness * 2)) + "px; } </style>");
+    $(style).remove();
+    var style = $("<style> .container > div{ display: inline-block; height: " + (+gridSize / +gridHeight) + "px; width: " + (+gridSize / +gridWidth) + "px; border: " + borderThickness + "px solid black; } #grid{ display: block; margin: 50px auto; height: " + (+gridSize + (+borderThickness * 2)) + "px; width: " + (+gridSize + (+borderThickness * 2)) + "px; } .container{ display: block; margin: 0px auto; height: " + (+gridSize / +gridHeight) + "px; width: " + (+gridSize + (gridWidth * borderThickness * 2)) + "px; } </style>");
     $('html > head').append(style);
+    console.log(+gridSize / (+gridHeight + (+borderThickness * 2)))
   }
 
 
