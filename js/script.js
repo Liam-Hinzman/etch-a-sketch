@@ -44,7 +44,24 @@ $(document).ready(function(){
 
   function applyCss(){
     $('style').remove();
-    var style = $("<style> .container > div{ display: inline-block; height: " + (+gridSize / +gridHeight) + "px; width: " + (+gridSize / +gridWidth) + "px; border: " + borderThickness + "px solid black; } #grid{ display: block; margin: 25px auto; height: " + (+gridSize + (+borderThickness * 2)) + "px; width: " + (+gridSize + (+borderThickness * 2)) + "px; } .container{ display: block; margin: 0px auto; height: " + (+gridSize / +gridHeight) + "px; width: " + (+gridSize + (gridWidth * borderThickness * 2)) + "px; } </style>");
+    var style = $("<style> \
+                     .container > div{ \
+                       display: inline-block; \
+                       height: " + (+gridSize / +gridHeight) + "px; \
+                       width: " + (+gridSize / +gridWidth) + "px; \
+                       border: " + borderThickness + "px solid black; \
+                     } \
+                     #grid{ \
+                       display: block; \
+                       margin: 25px auto; \
+                       height: " + (+gridSize + (+borderThickness * 2)) + "px; \
+                       width: " + (+gridSize + (+borderThickness * 2)) + "px; } \
+                     .container{ \
+                       display: block; margin: 0px auto; \
+                       height: " + (+gridSize / +gridHeight) + "px; \
+                       width: " + (+gridSize + (gridWidth * borderThickness * 2)) + "px;\
+                     } \
+                    </style>");
     $('html > head').append(style);
   }
 
