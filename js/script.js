@@ -104,5 +104,16 @@ $(document).ready(function(){
     }
 
   })
+  
+  $(document).on('vmouseover','.container > div', function(){
+    console.log(randomColorTF);
+    if(randomColorTF === true){
+      getRandomColor();
+      $(this).css('background-color', color);
+    }else{
+      $(this).css('background-color', 'black');
+    }
+
+})
 
 })
